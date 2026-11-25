@@ -1,0 +1,6 @@
+{
+  "name": "Jay Goga Travels",
+  "description": "Luxury sleeper bus reservations, interactive berth selection, online Razorpay and counter cash booking, and full fleet administration for Jay Goga Travels.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

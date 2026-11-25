@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      (function () {
+        try {
+          var own = Object.getOwnPropertyDescriptor(window, 'fetch');
+          var proto = Object.getPrototypeOf(window);
+          var protoDesc = proto ? Object.getOwnPropertyDescriptor(proto, 'fetch') : undefined;
+          var hasGetterOnly =
+            (own && own.get && !own.set) ||
+            (!own && protoDesc && protoDesc.get && !protoDesc.set);
+          if (hasGetterOnly && (!own || own.configurable)) {
+            Object.defineProperty(window, 'fetch', {
+              value: window.fetch,
+              writable: true,
+              enumerable: true,
+              configurable: true,
+            });
+          }
+        } catch (_) {}
+      })();
+    </script>
+    <title>Jay Goga Travels — Luxury Sleeper Bus Reservations</title>
+    <meta
+      name="description"
+      content="Book luxury AC and Non-AC sleeper bus journeys across Gujarat with Jay Goga Travels. Interactive berth selection, instant PNR QR tickets, Razorpay online payments, and counter reservations."
+    />
+    <meta property="og:title" content="Jay Goga Travels — Luxury Sleeper Bus Reservations" />
+    <meta
+      property="og:description"
+      content="Premium sleeper bus reservations across Gujarat with real-time berth availability and instant QR boarding passes."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+SC:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Noto+Sans+Gujarati:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-[#09090B] text-[#FAF7F0] antialiased selection:bg-[#D4AF37] selection:text-[#09090B]">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
